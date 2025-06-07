@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WoyaobaomingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WoyaobaomingEntity" id="woyaobaomingMap">
+        <result property="tonggaobiaoti" column="tonggaobiaoti"/>
+        <result property="tonggaoleixing" column="tonggaoleixing"/>
+        <result property="zhaomurenshu" column="zhaomurenshu"/>
+        <result property="jiezhiriqi" column="jiezhiriqi"/>
+        <result property="paisheshijian" column="paisheshijian"/>
+        <result property="paishedidian" column="paishedidian"/>
+        <result property="yongjin" column="yongjin"/>
+        <result property="tonggaoneirong" column="tonggaoneirong"/>
+        <result property="shangjiazhanghao" column="shangjiazhanghao"/>
+        <result property="shangjianicheng" column="shangjianicheng"/>
+        <result property="shangjiaxingming" column="shangjiaxingming"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="baomingshenqing" column="baomingshenqing"/>
+        <result property="baomingshijian" column="baomingshijian"/>
+        <result property="baomingzhuangtai" column="baomingzhuangtai"/>
+        <result property="yanyuanzhanghao" column="yanyuanzhanghao"/>
+        <result property="nicheng" column="nicheng"/>
+        <result property="xingming" column="xingming"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WoyaobaomingVO" >
+		SELECT * FROM woyaobaoming  woyaobaoming         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WoyaobaomingVO" >
+		SELECT  woyaobaoming.* FROM woyaobaoming  woyaobaoming 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WoyaobaomingView" >
+
+		SELECT  woyaobaoming.* FROM woyaobaoming  woyaobaoming 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WoyaobaomingView" >
+		SELECT * FROM woyaobaoming  woyaobaoming <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
